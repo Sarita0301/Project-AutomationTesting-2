@@ -3,6 +3,7 @@ package PageFile;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -37,6 +38,12 @@ public class AbstractMethods {
 	}
 
 	public void implicitlywaitmethod() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
+	}
+	
+	public void scroll_Down() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(500, document.body.scrollHeight)");
+
 	}
 }

@@ -3,13 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.AutomationTestCases_saucedemo">
+      <class name="TestCases.SauceDemoAutomationTestCases">
         <methods>
-          <include name="VerifyLoginWithInValidData"/>
-          <include name="setUpofBrowser"/>
+          <include name="test"/>
+          <include name="VerifyLoginWithValidData"/>
           <include name="tearDown"/>
+          <include name="LogoutUser"/>
+          <include name="Add_To_Cart"/>
+          <include name="setUpofBrowser"/>
+          <include name="VerifyLoginWithInValidData"/>
         </methods>
-      </class> <!-- TestCases.AutomationTestCases_saucedemo -->
+      </class> <!-- TestCases.SauceDemoAutomationTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

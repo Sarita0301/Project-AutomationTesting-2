@@ -1,37 +1,511 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="0" failed="0" skipped="5">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-11T15:59:38 IST" name="Default suite" finished-at="2024-01-11T15:59:46 IST" duration-ms="7970">
+  <suite started-at="2024-01-12T17:25:07 IST" name="Default suite" finished-at="2024-01-12T17:25:07 IST" duration-ms="161">
     <groups>
     </groups>
-    <test started-at="2024-01-11T15:59:38 IST" name="Default test" finished-at="2024-01-11T15:59:46 IST" duration-ms="7970">
-      <class name="TestCases.AutomationTestCases_saucedemo">
-        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.AutomationTestCases_saucedemo@5aa9e4eb]" started-at="2024-01-11T15:59:38 IST" name="setUpofBrowser" finished-at="2024-01-11T15:59:42 IST" duration-ms="3781" status="PASS">
+    <test started-at="2024-01-12T17:25:07 IST" name="Default test" finished-at="2024-01-12T17:25:07 IST" duration-ms="161">
+      <class name="TestCases.SauceDemoAutomationTestCases">
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="setUpofBrowser" finished-at="2024-01-12T17:25:07 IST" duration-ms="87" status="FAIL">
+          <exception class="org.openqa.selenium.remote.NoSuchDriverException">
+            <message>
+              <![CDATA[Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:25)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:13)
+at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:99)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:51)
+at TestCases.SauceDemoAutomationTestCases.setUpofBrowser(SauceDemoAutomationTestCases.java:45)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.WebDriverException: Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:182)
+at org.openqa.selenium.manager.SeleniumManager.getDriverPath(SeleniumManager.java:253)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:22)
+... 36 more
+Caused by: java.io.IOException: There is not enough space on the disk
+at java.base/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+at java.base/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:75)
+at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:137)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:102)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:72)
+at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:300)
+at java.base/sun.nio.ch.ChannelOutputStream.writeFully(ChannelOutputStream.java:68)
+at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:105)
+at java.base/java.io.InputStream.transferTo(InputStream.java:791)
+at java.base/java.nio.file.Files.copy(Files.java:3146)
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:178)
+... 38 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.NoSuchDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpofBrowser -->
-        <test-method signature="VerifyLoginWithValidData()[pri:1, instance:TestCases.AutomationTestCases_saucedemo@5aa9e4eb]" started-at="2024-01-11T15:59:42 IST" name="VerifyLoginWithValidData" finished-at="2024-01-11T15:59:42 IST" duration-ms="428" status="PASS">
+        <test-method signature="test()[pri:-1, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="test" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.remote.NoSuchDriverException">
+            <message>
+              <![CDATA[Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:25)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:13)
+at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:99)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:51)
+at TestCases.SauceDemoAutomationTestCases.setUpofBrowser(SauceDemoAutomationTestCases.java:45)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.WebDriverException: Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:182)
+at org.openqa.selenium.manager.SeleniumManager.getDriverPath(SeleniumManager.java:253)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:22)
+... 36 more
+Caused by: java.io.IOException: There is not enough space on the disk
+at java.base/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+at java.base/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:75)
+at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:137)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:102)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:72)
+at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:300)
+at java.base/sun.nio.ch.ChannelOutputStream.writeFully(ChannelOutputStream.java:68)
+at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:105)
+at java.base/java.io.InputStream.transferTo(InputStream.java:791)
+at java.base/java.nio.file.Files.copy(Files.java:3146)
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:178)
+... 38 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.NoSuchDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="tearDown" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="setUpofBrowser" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="Add_To_Cart()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="Add_To_Cart" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.remote.NoSuchDriverException">
+            <message>
+              <![CDATA[Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:25)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:13)
+at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:99)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:51)
+at TestCases.SauceDemoAutomationTestCases.setUpofBrowser(SauceDemoAutomationTestCases.java:45)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.WebDriverException: Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:182)
+at org.openqa.selenium.manager.SeleniumManager.getDriverPath(SeleniumManager.java:253)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:22)
+... 36 more
+Caused by: java.io.IOException: There is not enough space on the disk
+at java.base/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+at java.base/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:75)
+at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:137)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:102)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:72)
+at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:300)
+at java.base/sun.nio.ch.ChannelOutputStream.writeFully(ChannelOutputStream.java:68)
+at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:105)
+at java.base/java.io.InputStream.transferTo(InputStream.java:791)
+at java.base/java.nio.file.Files.copy(Files.java:3146)
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:178)
+... 38 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.NoSuchDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_To_Cart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="tearDown" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="setUpofBrowser" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="VerifyLoginWithValidData()[pri:1, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="VerifyLoginWithValidData" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.remote.NoSuchDriverException">
+            <message>
+              <![CDATA[Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:25)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:13)
+at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:99)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:51)
+at TestCases.SauceDemoAutomationTestCases.setUpofBrowser(SauceDemoAutomationTestCases.java:45)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.WebDriverException: Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:182)
+at org.openqa.selenium.manager.SeleniumManager.getDriverPath(SeleniumManager.java:253)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:22)
+... 36 more
+Caused by: java.io.IOException: There is not enough space on the disk
+at java.base/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+at java.base/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:75)
+at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:137)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:102)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:72)
+at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:300)
+at java.base/sun.nio.ch.ChannelOutputStream.writeFully(ChannelOutputStream.java:68)
+at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:105)
+at java.base/java.io.InputStream.transferTo(InputStream.java:791)
+at java.base/java.nio.file.Files.copy(Files.java:3146)
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:178)
+... 38 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.NoSuchDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyLoginWithValidData -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.AutomationTestCases_saucedemo@5aa9e4eb]" started-at="2024-01-11T15:59:42 IST" name="tearDown" finished-at="2024-01-11T15:59:42 IST" duration-ms="296" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="tearDown" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.AutomationTestCases_saucedemo@5aa9e4eb]" started-at="2024-01-11T15:59:42 IST" name="setUpofBrowser" finished-at="2024-01-11T15:59:45 IST" duration-ms="2756" status="PASS">
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="setUpofBrowser" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpofBrowser -->
-        <test-method signature="VerifyLoginWithInValidData()[pri:2, instance:TestCases.AutomationTestCases_saucedemo@5aa9e4eb]" started-at="2024-01-11T15:59:45 IST" name="VerifyLoginWithInValidData" finished-at="2024-01-11T15:59:45 IST" duration-ms="364" status="PASS">
+        <test-method signature="VerifyLoginWithInValidData()[pri:2, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="VerifyLoginWithInValidData" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.remote.NoSuchDriverException">
+            <message>
+              <![CDATA[Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:25)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:13)
+at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:99)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:51)
+at TestCases.SauceDemoAutomationTestCases.setUpofBrowser(SauceDemoAutomationTestCases.java:45)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.WebDriverException: Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:182)
+at org.openqa.selenium.manager.SeleniumManager.getDriverPath(SeleniumManager.java:253)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:22)
+... 36 more
+Caused by: java.io.IOException: There is not enough space on the disk
+at java.base/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+at java.base/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:75)
+at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:137)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:102)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:72)
+at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:300)
+at java.base/sun.nio.ch.ChannelOutputStream.writeFully(ChannelOutputStream.java:68)
+at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:105)
+at java.base/java.io.InputStream.transferTo(InputStream.java:791)
+at java.base/java.nio.file.Files.copy(Files.java:3146)
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:178)
+... 38 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.NoSuchDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyLoginWithInValidData -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.AutomationTestCases_saucedemo@5aa9e4eb]" started-at="2024-01-11T15:59:45 IST" name="tearDown" finished-at="2024-01-11T15:59:46 IST" duration-ms="277" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="tearDown" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- TestCases.AutomationTestCases_saucedemo -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="setUpofBrowser" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="LogoutUser()[pri:3, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="LogoutUser" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.remote.NoSuchDriverException">
+            <message>
+              <![CDATA[Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}, error Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:25)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:13)
+at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:99)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:51)
+at TestCases.SauceDemoAutomationTestCases.setUpofBrowser(SauceDemoAutomationTestCases.java:45)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.WebDriverException: Unable to obtain Selenium Manager Binary
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:182)
+at org.openqa.selenium.manager.SeleniumManager.getDriverPath(SeleniumManager.java:253)
+at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:22)
+... 36 more
+Caused by: java.io.IOException: There is not enough space on the disk
+at java.base/sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+at java.base/sun.nio.ch.FileDispatcherImpl.write(FileDispatcherImpl.java:75)
+at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:137)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:102)
+at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:72)
+at java.base/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:300)
+at java.base/sun.nio.ch.ChannelOutputStream.writeFully(ChannelOutputStream.java:68)
+at java.base/sun.nio.ch.ChannelOutputStream.write(ChannelOutputStream.java:105)
+at java.base/java.io.InputStream.transferTo(InputStream.java:791)
+at java.base/java.nio.file.Files.copy(Files.java:3146)
+at org.openqa.selenium.manager.SeleniumManager.getBinary(SeleniumManager.java:178)
+... 38 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.NoSuchDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogoutUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@139982de]" started-at="2024-01-12T17:25:07 IST" name="tearDown" finished-at="2024-01-12T17:25:07 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.SauceDemoAutomationTestCases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -15,9 +15,9 @@ public class ReUseableMethods {
 WebDriver driver;
 	
 	
-	public  ReUseableMethods(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public  ReUseableMethods(WebDriver driverhere) {
+		this.driver = driverhere;
+		PageFactory.initElements(driverhere, this);
 	}
 	// Method to verify the title is equal to expected title
 		public void titleEquals(String expectedTitle) {
@@ -32,7 +32,7 @@ WebDriver driver;
 			
 		}
 		// Method to verify the innerHtmlText of the single webelement is equal to the expected text
-		public void innerTextEquals(WebElement element, String expectedText) {
+		public void innerTextTrue(WebElement element, String expectedText) {
 			String actualText = element.getText();
 			assertEquals(actualText, expectedText);
 			//System.out.println(actualText);
