@@ -3,17 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.SauceDemoAutomationTestCases">
+      <class name="TestCases.Trails2">
         <methods>
-          <include name="test"/>
-          <include name="VerifyLoginWithValidData"/>
           <include name="tearDown"/>
-          <include name="LogoutUser"/>
-          <include name="Add_To_Cart"/>
+          <include name="CheckOutInformationPage"/>
           <include name="setUpofBrowser"/>
-          <include name="VerifyLoginWithInValidData"/>
         </methods>
-      </class> <!-- TestCases.SauceDemoAutomationTestCases -->
+      </class> <!-- TestCases.Trails2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

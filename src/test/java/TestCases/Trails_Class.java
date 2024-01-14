@@ -2,6 +2,8 @@ package TestCases;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -10,10 +12,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.FindBy;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import PageFile.AboutPage;
 import PageFile.AbstractMethods;
 import PageFile.InventoryPage;
 import PageFile.LoginPage;
@@ -26,6 +29,7 @@ public class Trails_Class {
 	InventoryPage In;
 	AbstractMethods Am;
 	ReUseableMethods Rm;
+	AboutPage Ap;
 
 	@FindBy(xpath = "//*[@id=\\\"react-burger-menu-btn\\\"]")WebElement ActualTitle;
 	By massage = By.xpath("//*[contains(text(),'Products')]");
@@ -36,7 +40,17 @@ public class Trails_Class {
 	@FindBy(className="shopping_cart_badge")
 	WebElement cartIcon;
 
-	@BeforeTest
+	By popUpOkButton=By.id("onetrust-accept-btn-handler");
+	
+	By popUpOkButton2=By.id("onetrust-accept-btn-handler");
+
+	@FindBy(xpath="//*[@id=\"__next\"]/div[2]/div[1]/div/div[1]/div[1]/div/div[3]/p")
+	WebElement AboutPg;
+
+	@FindBy(xpath="//*[@id=\"__next\"]/div[2]/div[1]/div/div[1]/div[1]/div/div[4]/div[1]/a/button")
+	WebElement tryItFreeBtn;
+
+	@BeforeMethod
 	public void setUpofBrowser() throws IOException {
 		FileInputStream fs = new FileInputStream("E:\\eclipse-workspace_Selenium\\Project-AutomationTesting-2\\src\\test\\java\\DataFile\\Data.Properties");
 		Properties prop = new Properties();
@@ -54,45 +68,88 @@ public class Trails_Class {
 		String url = prop.getProperty("url");
 		driver.get(url);
 		driver.manage().window().maximize();
-		}
+	}
 
-	@AfterTest
+	@AfterMethod
 	public void tearDown() {
 		driver.quit();
 
 	}
 
 	@Test
-	public void VerifyProductPgFooter() throws IOException, InterruptedException {
+	public void verifyAboutPage() throws IOException, InterruptedException {
 		lp= new LoginPage(driver);
 		// enter the user& password and click login buttton
 		lp.EnterValidCrendial();
 		lp.clickonLoginBtn();
-		//verify landed to Inventory page
-		Rm= new ReUseableMethods(driver);
-		Rm.urlEquals("https://www.saucedemo.com/inventory.html");
+
+
 		Am= new AbstractMethods(driver);
 		Am.implicitlywaitmethod();
 
-		Am.scroll_Down();
+		//Click to menu Button and then click to About button
+		In= new InventoryPage(driver);
+		In.clickOnMenuButton();
+		In.clickOnAboutButton();
 
-		In.VerifyAtTwitterIconEnableAndNavigatedToTwitterPg();
+		Am.implicitlywaitmethod();
+		Am.Wait_Till_Link_Is_Clickable(popUpOkButton);
 
-		//Verify landed to Twitter pg
+		// Verify navigated to About Page and "The world relies on your code" text is visibile
+		Ap= new AboutPage(driver);
+		Ap.verifyNavigatedToAboutPg();
+
+		// Verify Try It Free Function of About Page and "Start Testing text" is visible"
+
+		Ap.verifyAboutPgTryItFunctions();
+		System.out.println("Test Case >> Try It Functions of About Page ");
+
+	}
+	@Test(priority=1) 
+	public void verifyRequestDemoPg() throws IOException {
+		lp= new LoginPage(driver);
+		// enter the user& password and click login buttton
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+
+		Am= new AbstractMethods(driver);
 		Am.implicitlywaitmethod();
 
-//		// Switch to the new window or tab (assuming it's the last one)
-//		for (String windowHandle : driver.getWindowHandles()) {
-//			driver.switchTo().window(windowHandle);
-//		}
-//		// Verify that the current URL is the Twitter page
-//		String currentUrl = driver.getCurrentUrl();
-//		Assert.assertTrue(currentUrl.contains("twitter.com"), "Not navigated to Twitter page");
+		//Click to menu Button and then click to About button
+		In= new InventoryPage(driver);
+		In.clickOnMenuButton();
+		In.clickOnAboutButton();
+
+		Am.implicitlywaitmethod();
+		Am.Wait_Till_Link_Is_Clickable(popUpOkButton);
+
+		// Verify navigated to About Page and "The world relies on your code" text is visibile
+		Ap= new AboutPage(driver);
+		Ap.verifyNavigatedToAboutPg();
+
+//		// Verify Request Demo  Funtion of About Page and "Request Demo Text" is visible"
 //
-//		// Optionally, you can print the current URL for verification
-//		System.out.println("Current URL: " + currentUrl);
+//		Ap.verifyAboutPgRequestDemo();;
+		System.out.println("Test Case >> requestof About Page ");
 
 
 	}
-	
+//	// Method to get the list of product names
+//		public List<String> getProductNames() {
+//		    // Create an empty list to store product names
+//		    List<String> productNames = new ArrayList<>();
+//
+//		    // Find all elements on the page with the class 'inventory_item_name'
+//		    List<WebElement> productElements = driver.findElements(By.xpath("//div[@class='inventory_item_name']"));
+//
+//		    // Iterate through each WebElement representing a product name
+//		    for (WebElement productElement : productElements) {
+//		        // Get the text of the product name element and add it to the list
+//		        productNames.add(productElement.getText());
+//		    }
+//
+//		    // Return the list of product names
+//		    return productNames;
+//		}
 }

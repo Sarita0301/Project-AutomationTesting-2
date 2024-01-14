@@ -1,5 +1,9 @@
 package PageFile;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,6 +23,9 @@ public class InventoryPage extends AbstractMethods{
 
 	@FindBy(xpath="//button[@id='react-burger-menu-btn']")
 	WebElement menuBtn;
+
+	@FindBy(id="about_sidebar_link")
+	WebElement aboutBtn;
 
 	@FindBy(xpath="//a[@id='logout_sidebar_link']")
 	WebElement logOut;
@@ -51,10 +58,51 @@ public class InventoryPage extends AbstractMethods{
 		this.driver=driverhere;
 		PageFactory.initElements(driverhere, this);
 	}
-	public void changeFilter() {
+	public void clickOnMenuButton() {
+		menuBtn.click();
+	}
+	public void clickOnAboutButton() {
+		aboutBtn.click();
+	}
+	public void changeFilterName_AtoZ() {
+
+		Select sel=new Select(select);
+		//sel.selectByIndex(0);
+
+		System.out.println("===");
+		// Capture the initial state
+		List<WebElement> initialElements = driver.findElements(By.xpath("//*[@id=\"inventory_container\"]/div"));
+
+		// Change the sorting order
+		sel.selectByIndex(1);
+		System.out.println("9999"+initialElements.get(0));
+
+		// Capture the state after changing the sorting order
+		List<WebElement> elementsAfterSorting = driver.findElements(By.xpath("/html/body/div/div/div/div[2]/div/div"));
+		System.out.println("000"+elementsAfterSorting);
+		// Compare the states
+		for (int i = 0; i < initialElements.size(); i++) {
+			String initialText = initialElements.get(i).getText();
+			String afterSortingText = elementsAfterSorting.get(i).getText();
+
+			// Assert that the order has changed as expected
+			Assert.assertNotEquals(initialText, afterSortingText, "Order is not changed as expected");
+		}
+	}
+	public void changeFilterName_ZtoA() {
+
+		Select sel=new Select(select);
+		sel.selectByIndex(1);
+	}
+	public void changeFilterPrice_LowtoHigh() {
 
 		Select sel=new Select(select);
 		sel.selectByIndex(2);
+	}
+	public void changeFilterPrice_HightoLow() {
+
+		Select sel=new Select(select);
+		sel.selectByIndex(3);
 	}
 	public void logout() {
 		implicitlywaitmethod();
@@ -92,7 +140,7 @@ public class InventoryPage extends AbstractMethods{
 		Actions actions = new Actions(driver);
 		actions.moveToElement(twitterIcon).click().perform();
 	}
-	
+
 	public void VerifyAtFacebookIconEnableAndNavigatedToFacebookPg() {
 		facebookIcon.click();
 		Actions actions = new Actions(driver);
@@ -103,6 +151,8 @@ public class InventoryPage extends AbstractMethods{
 		Actions actions = new Actions(driver);
 		actions.moveToElement(linkdinIcon).click().perform();
 	}
+	
+	
 }
 
 

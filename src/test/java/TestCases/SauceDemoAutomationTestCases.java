@@ -15,7 +15,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import PageFile.AboutPage;
 import PageFile.AbstractMethods;
+import PageFile.CartPage;
 import PageFile.ExcelUtility;
 import PageFile.InventoryPage;
 import PageFile.LoginPage;
@@ -28,10 +30,18 @@ public class SauceDemoAutomationTestCases {
 	InventoryPage In;
 	AbstractMethods Am;
 	ReUseableMethods Rm;
-
+	AboutPage Ap;
+	
 	@FindBy(xpath = "//*[@id=\\\"react-burger-menu-btn\\\"]")WebElement ActualTitle;
+
 	By massage = By.xpath("//*[contains(text(),'Products')]");
+
 	@FindBy(xpath="//h4[text()='Accepted usernames are:']")WebElement AcceptedUserdetails;
+	By popUpOkButton=By.id("onetrust-accept-btn-handler");
+
+	@FindBy(xpath="//h1[text()='Start testing in minutes']")
+	WebElement AboutPg;
+
 
 	@BeforeMethod
 	public void setUpofBrowser() throws IOException {
@@ -126,16 +136,16 @@ public class SauceDemoAutomationTestCases {
 		In= new InventoryPage(driver);
 		In.logout();
 		Am.implicitlywaitmethod();
-		
+
 		//Verify that user is navigated to login page
 		Rm= new ReUseableMethods(driver);
 		Rm.urlEquals("https://www.saucedemo.com/");
 		Am.implicitlywaitmethod();
-		
+
 		System.out.println("Test Case 3-->> Logout User");
-		
+
 	}
-	@Test
+	@Test(priority=4)
 	public void Add_To_Cart() throws IOException  {
 		lp= new LoginPage(driver);
 		// enter the user& password and click login buttton
@@ -164,10 +174,163 @@ public class SauceDemoAutomationTestCases {
 
 		// Verify the number of products in the cart notification on the cart page
 		In.verifyCartNotification();
-		
+
 		System.out.println("Test Case 4-->> Verify add products & notification in cart");
 	}
+	@Test(priority=5)
+	public void VerifyProductPgFooter_NavigatedTotwitter() throws IOException, InterruptedException {
+		lp= new LoginPage(driver);
+		// enter the user& password and click login buttton
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+		//verify landed to Inventory page
+		Rm= new ReUseableMethods(driver);
+		Rm.urlEquals("https://www.saucedemo.com/inventory.html");
+		Am= new AbstractMethods(driver);
+		Am.implicitlywaitmethod();
+
+		Am.scroll_Down();
+		In= new InventoryPage(driver);
+		In.VerifyAtTwitterIconEnableAndNavigatedToTwitterPg();
+
+		//Verify landed to Twitter pg
+		Am.implicitlywaitmethod();
+
+		// Switch to the new window or tab (assuming it's the last one)
+		for (String windowHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(windowHandle);
+		}
+		// Verify that the current URL is the Twitter page
+		Rm.urlEquals("https://twitter.com/saucelabs");
+
+		// Optionally, you can print the current URL for verification
+		System.out.println("Current URL: " + driver.getCurrentUrl());
+		System.out.println("Test Case 5-->> Verify footer of ProductPg and navigated to Twitter pg");
+	}
+	@Test(priority=6)
+	public void VerifyProductPgFooter_NavigatedToFacebook() throws IOException, InterruptedException {
+		lp= new LoginPage(driver);
+		// enter the user& password and click login buttton
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+		//verify landed to Inventory page
+		Rm= new ReUseableMethods(driver);
+		Rm.urlEquals("https://www.saucedemo.com/inventory.html");
+		Am= new AbstractMethods(driver);
+		Am.implicitlywaitmethod();
+
+		Am.scroll_Down();
+		In= new InventoryPage(driver);
+		In.VerifyAtFacebookIconEnableAndNavigatedToFacebookPg();
+
+		//Verify landed to facebook pg
+		Am.implicitlywaitmethod();
+
+		// Switch to the new window or tab (assuming it's the last one)
+		for (String windowHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(windowHandle);
+		}
+		// Verify that the current URL is the Twitter page
+		Rm.urlEquals("https://www.facebook.com/saucelabs");
+
+		// Optionally, you can print the current URL for verification
+		System.out.println("Current URL: " + driver.getCurrentUrl());
+		System.out.println("Test Case 6-->> Verify footer of ProductPg and navigated to Facebook pg");
+	}
+	@Test(priority=7)
+	public void VerifyProductPgFooter_NavigatedToLinkedin() throws IOException, InterruptedException {
+		lp= new LoginPage(driver);
+		// enter the user& password and click login buttton
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+		//verify landed to Inventory page
+		Rm= new ReUseableMethods(driver);
+		Rm.urlEquals("https://www.saucedemo.com/inventory.html");
+		Am= new AbstractMethods(driver);
+		Am.implicitlywaitmethod();
+
+		Am.scroll_Down();
+		In= new InventoryPage(driver);
+		In.VerifyAtLinkdinIconEnableAndNavigatedToLinkedinPg();
+
+		//Verify landed to Linkdin pg
+		Am.implicitlywaitmethod();
+
+		// Switch to the new window or tab (assuming it's the last one)
+		for (String windowHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(windowHandle);
+		}
+		// Verify that the current URL is the Twitter page
+		Rm.urlEquals("https://www.linkedin.com/company/sauce-labs/");
+
+		// Optionally, you can print the current URL for verification
+		System.out.println("Current URL: " + driver.getCurrentUrl());
+		System.out.println("Test Case 7-->> Verify footer of ProductPg and navigated to Linkdin pg");
+	}
+	@Test (priority=8)
+	public void verifyAboutPage() throws IOException, InterruptedException {
+		lp= new LoginPage(driver);
+		// enter the user& password and click login buttton
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+
+		Am= new AbstractMethods(driver);
+		Am.implicitlywaitmethod();
+
+		//Click to menu Button and then click to About button
+		In= new InventoryPage(driver);
+		In.clickOnMenuButton();
+		In.clickOnAboutButton();
+
+		Am.implicitlywaitmethod();
+		Am.Wait_Till_Link_Is_Clickable(popUpOkButton);
+		// Verify landed to about page and "The World relies on you code " text is visible on same page	
+		Assert.assertTrue(AboutPg.isDisplayed(), "Didnt Landed to About page");
+		boolean istextVisible=AboutPg.isDisplayed();
+		// Optionally, you can print the current URL for verification
+		System.out.println("Is text visible on the About page? " + istextVisible);
+		System.out.println("Test Case 8-->> Verify About pg");
+	}
+
 	
+	public void CheckOutInformationPage() throws IOException {
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+		//Add the products into cart
+		In= new InventoryPage(driver);
+		In.addFirstProductToCart();
+		In.addSecondProductToCart();
+
+		//Click on cart btn
+		In.CartBtn();
+
+		//Click on checkout Button and verify successfully landed to checkOutInformation Page
+		CartPage cp= new CartPage(driver);
+		cp.verifyCartPageCheckOutInformation();
+		
+		//enter the checkout Information details
+		cp.enterCheckoutInformation();
+		
+		//click on continue button
+		cp.continueBtn();
+		
+		
+		//verify the payment details are visible
+		System.out.println(cp.getPaymentInformation());
+		
+		//click on finish button
+		cp.clickOnFinishBtn();
+		
+		//verify order Placed successfully massage 
+		cp.verifyOrderSuccessfullMassage();
+	System.out.println("test Case-->>>9");
+	
+	}
+
 }
 
 
