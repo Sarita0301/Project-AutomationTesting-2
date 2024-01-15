@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -77,7 +78,7 @@ public class Trails2 {
 	}
 
 	@Test
-	public void CheckOutInformationPage() throws IOException {
+	public void restAppStateFunction() throws IOException {
 		//Enter the login details
 		lp=new LoginPage(driver);
 		lp.EnterValidCrendial();
@@ -87,30 +88,28 @@ public class Trails2 {
 		In= new InventoryPage(driver);
 		In.addFirstProductToCart();
 		In.addSecondProductToCart();
-
-		//Click on cart btn
+		
+		//view Cart
 		In.CartBtn();
+		
+		//verify the cart notification matches with no. of added products
+		In.verifyCartNotificationAfterAdding2Products();
+		
+		In.clickOnMenuButton();
+		
+		//
+		In.clickOnResetAppState();
+		
+		driver.navigate().refresh();
+		
+		//
+		Am=new AbstractMethods(driver);
+		Am.implicitlywaitmethod();
+		In.verifyCartNotificationAtResetMode();	
+		System.out.println("Test Case -->> Remove 1st in Cart page verify the cart notification");
 
-		//Click on checkout Button and verify successfully landed to checkOutInformation Page
-		CartPage cp= new CartPage(driver);
-		cp.verifyCartPageCheckOutInformation();
-		
-		//enter the checkout Information details
-		cp.enterCheckoutInformation();
-		
-		//click on continue button
-		cp.continueBtn();
-		
-		
-		//verify the payment details are visible
-		System.out.println(cp.getPaymentInformation());
-		
-		//click on finish button
-		cp.clickOnFinishBtn();
-		
-		//verify order Placed successfully massage 
-		cp.verifyOrderSuccessfullMassage();
 	}
+
 
 
 }

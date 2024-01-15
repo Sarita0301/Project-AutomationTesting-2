@@ -18,7 +18,6 @@ import org.testng.annotations.Test;
 import PageFile.AboutPage;
 import PageFile.AbstractMethods;
 import PageFile.CartPage;
-import PageFile.ExcelUtility;
 import PageFile.InventoryPage;
 import PageFile.LoginPage;
 import PageFile.ReUseableMethods;
@@ -31,7 +30,7 @@ public class SauceDemoAutomationTestCases {
 	AbstractMethods Am;
 	ReUseableMethods Rm;
 	AboutPage Ap;
-	
+
 	@FindBy(xpath = "//*[@id=\\\"react-burger-menu-btn\\\"]")WebElement ActualTitle;
 
 	By massage = By.xpath("//*[contains(text(),'Products')]");
@@ -173,11 +172,42 @@ public class SauceDemoAutomationTestCases {
 		In.CartBtn();
 
 		// Verify the number of products in the cart notification on the cart page
-		In.verifyCartNotification();
+		In.verifyCartNotificationAfterAdding2Products();
 
 		System.out.println("Test Case 4-->> Verify add products & notification in cart");
 	}
 	@Test(priority=5)
+	public void removeProduct_InCartPage() throws IOException {
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+		//Add the products into cart
+		In= new InventoryPage(driver);
+		In.addFirstProductToCart();
+		In.addSecondProductToCart();
+
+		// Verify the number of products in the cart notification
+		Assert.assertTrue(In.CartIconDisplayed(), "Cart icon not visible");
+
+		// Click on the cart icon to open the cart
+
+		In.CartBtn();
+
+		// Verify the number of products in the cart notification on the cart page
+		In.verifyCartNotificationAfterAdding2Products();;
+
+		//Click on remove button on 1st Product
+		In.clickOnRemoveBtn();
+
+		// Verify the number of products in the cart notification After removing the 1st product on the cart page
+		In.verifyCartNotificationAfterRemoving1stProduct();
+		System.out.println("Test Case 5-->> Remove 1st in Cart page verify the cart notification");
+
+	}
+
+	@Test(priority=6)
 	public void VerifyProductPgFooter_NavigatedTotwitter() throws IOException, InterruptedException {
 		lp= new LoginPage(driver);
 		// enter the user& password and click login buttton
@@ -205,9 +235,9 @@ public class SauceDemoAutomationTestCases {
 
 		// Optionally, you can print the current URL for verification
 		System.out.println("Current URL: " + driver.getCurrentUrl());
-		System.out.println("Test Case 5-->> Verify footer of ProductPg and navigated to Twitter pg");
+		System.out.println("Test Case 6-->> Verify footer of ProductPg and navigated to Twitter pg");
 	}
-	@Test(priority=6)
+	@Test(priority=7)
 	public void VerifyProductPgFooter_NavigatedToFacebook() throws IOException, InterruptedException {
 		lp= new LoginPage(driver);
 		// enter the user& password and click login buttton
@@ -235,9 +265,9 @@ public class SauceDemoAutomationTestCases {
 
 		// Optionally, you can print the current URL for verification
 		System.out.println("Current URL: " + driver.getCurrentUrl());
-		System.out.println("Test Case 6-->> Verify footer of ProductPg and navigated to Facebook pg");
+		System.out.println("Test Case 7-->> Verify footer of ProductPg and navigated to Facebook pg");
 	}
-	@Test(priority=7)
+	@Test(priority=8)
 	public void VerifyProductPgFooter_NavigatedToLinkedin() throws IOException, InterruptedException {
 		lp= new LoginPage(driver);
 		// enter the user& password and click login buttton
@@ -265,9 +295,9 @@ public class SauceDemoAutomationTestCases {
 
 		// Optionally, you can print the current URL for verification
 		System.out.println("Current URL: " + driver.getCurrentUrl());
-		System.out.println("Test Case 7-->> Verify footer of ProductPg and navigated to Linkdin pg");
+		System.out.println("Test Case 8-->> Verify footer of ProductPg and navigated to Linkdin pg");
 	}
-	@Test (priority=8)
+	@Test (priority=100)
 	public void verifyAboutPage() throws IOException, InterruptedException {
 		lp= new LoginPage(driver);
 		// enter the user& password and click login buttton
@@ -293,7 +323,8 @@ public class SauceDemoAutomationTestCases {
 		System.out.println("Test Case 8-->> Verify About pg");
 	}
 
-	
+	@Test(priority=9)
+
 	public void CheckOutInformationPage() throws IOException {
 		//Enter the login details
 		lp=new LoginPage(driver);
@@ -311,25 +342,191 @@ public class SauceDemoAutomationTestCases {
 		//Click on checkout Button and verify successfully landed to checkOutInformation Page
 		CartPage cp= new CartPage(driver);
 		cp.verifyCartPageCheckOutInformation();
-		
+
 		//enter the checkout Information details
-		cp.enterCheckoutInformation();
-		
+		cp.enterFirstNameCheckoutInformation();
+		cp.enterLastNameCheckoutInformation();
+		cp.enterZipCodeCheckoutInformation();
+
+
 		//click on continue button
 		cp.continueBtn();
-		
-		
+
+
 		//verify the payment details are visible
 		System.out.println(cp.getPaymentInformation());
-		
+
 		//click on finish button
 		cp.clickOnFinishBtn();
-		
+
 		//verify order Placed successfully massage 
 		cp.verifyOrderSuccessfullMassage();
-	System.out.println("test Case-->>>9");
-	
+		System.out.println("test Case-->>>9 Place Order:with all checkout information");
+
 	}
+	@Test(priority=10)
+	public void placeOrder_withoutCheckoutInformation() throws IOException {
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+		//Add the products into cart
+		In= new InventoryPage(driver);
+		In.addFirstProductToCart();
+		In.addSecondProductToCart();
+
+		//Click on cart btn
+		In.CartBtn();
+
+		//Click on checkout Button and verify successfully landed to checkOutInformation Page
+		CartPage cp= new CartPage(driver);
+		cp.verifyCartPageCheckOutInformation();
+
+
+		//click on continue button
+		cp.continueBtn();
+
+
+		// verify the error massage " FirstName is required" at checkoutInformation
+		cp.verifyCheckOutErrorMassage();
+
+		System.out.println("Test Case 10-->> CheckOut Information Error Massage With no details");
+
+	}
+
+	@Test(priority=11)
+	public void placeOrder_withFirstNameCheckoutInformation() throws IOException {
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+		//Add the products into cart
+		In= new InventoryPage(driver);
+		In.addFirstProductToCart();
+
+		//Click on cart btn
+		In.CartBtn();
+		//Click on checkout Button and verify successfully landed to checkOutInformation Page
+		CartPage cp= new CartPage(driver);
+		cp.verifyCartPageCheckOutInformation();
+
+		//enter the checkout Information details
+		cp.enterFirstNameCheckoutInformation();
+
+
+
+		//click on continue button
+		cp.continueBtn();
+
+		// verify the error massage " FirstName is required" at checkoutInformation
+		cp.verifyCheckOutErrorMassage();
+
+		System.out.println("Test Case 11-->> CheckOut Information Error Massage With FirstName details");
+
+	}
+	@Test(priority=12)
+	public void placeOrder_withOutZipCodeCheckoutInformation() throws IOException {
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+		//Add the products into cart
+		In= new InventoryPage(driver);
+		In.addFirstProductToCart();
+
+		//Click on cart btn
+		In.CartBtn();
+		//Click on checkout Button and verify successfully landed to checkOutInformation Page
+		CartPage cp= new CartPage(driver);
+		cp.verifyCartPageCheckOutInformation();
+
+		//enter the checkout Information details
+		cp.enterFirstNameCheckoutInformation();
+		cp.enterLastNameCheckoutInformation();
+
+
+
+		//click on continue button
+		cp.continueBtn();
+
+		// verify the error massage " FirstName is required" at checkoutInformation
+		cp.verifyCheckOutErrorMassage();
+
+		System.out.println("Test Case 12-->> CheckOut Information Error Massage WithOut PostalCode");
+
+	}
+
+	@Test(priority=13)
+	public void placeOrder_withOutLastNameCheckoutInformation() throws IOException {
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+		//Add the products into cart
+		In= new InventoryPage(driver);
+		In.addFirstProductToCart();
+
+		//Click on cart btn
+		In.CartBtn();
+		//Click on checkout Button and verify successfully landed to checkOutInformation Page
+		CartPage cp= new CartPage(driver);
+		cp.verifyCartPageCheckOutInformation();
+
+		//enter the checkout Information details
+		cp.enterFirstNameCheckoutInformation();
+
+		cp.enterZipCodeCheckoutInformation();
+
+
+
+		//click on continue button
+		cp.continueBtn();
+
+		// verify the error massage " FirstName is required" at checkoutInformation
+		cp.verifyCheckOutErrorMassage();
+
+		System.out.println("Test Case 13-->> CheckOut Information Error Massage WithOut Last Name");
+
+	}
+
+	@Test(priority=14)
+	public void productDetailsPage() throws IOException {
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+		//Add the products into cart
+		In= new InventoryPage(driver);
+
+		//View 1st product
+		In.viewFirstProduct();
+
+		//product details are visible
+		In.getProductInformation();
+
+		//print the product details
+		System.out.println(In.getProductInformation());
+
+		//Click on add to cart 
+		In.addFirstProductToCart();
+
+		//click on Back to Products page
+		In.clickOnBackToProductsBtn();
+
+		//view cart 
+		In.CartBtn();
+
+		//verify the cart notification
+		In.verifyCartNotificationAfterRemoving1stProduct();;
+		System.out.println("Test Case 14 -->> view product details");
+
+	}
+
 
 }
 

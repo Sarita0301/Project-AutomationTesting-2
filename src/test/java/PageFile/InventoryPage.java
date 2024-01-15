@@ -36,6 +36,9 @@ public class InventoryPage extends AbstractMethods{
 
 	@FindBy(xpath="//button[@id='add-to-cart-sauce-labs-onesie']")
 	WebElement Add2Cart2;
+	
+	@FindBy(xpath="//button[@name='remove-sauce-labs-backpack']")
+	WebElement removeBtn1;
 
 	@FindBy(className="shopping_cart_badge")
 	WebElement cartIcon;
@@ -51,6 +54,15 @@ public class InventoryPage extends AbstractMethods{
 
 	@FindBy(linkText="LinkedIn")
 	WebElement linkdinIcon;
+	
+	@FindBy(xpath="//*[@id=\"item_4_img_link\"]/img")
+	WebElement click1stProduct;
+	
+	@FindBy(xpath="//*[@id=\"back-to-products\"]")
+	WebElement backToProductsBtn;
+	
+	@FindBy(id="reset_sidebar_link")
+	WebElement resetAppStateBtn;
 
 	public InventoryPage(WebDriver driverhere) {
 		//driver=d;
@@ -64,6 +76,10 @@ public class InventoryPage extends AbstractMethods{
 	public void clickOnAboutButton() {
 		aboutBtn.click();
 	}
+	public void clickOnResetAppState() {
+		resetAppStateBtn.click();
+	}
+	
 	public void changeFilterName_AtoZ() {
 
 		Select sel=new Select(select);
@@ -109,6 +125,9 @@ public class InventoryPage extends AbstractMethods{
 		menuBtn.click();
 		logOut.click();
 	}
+	public void viewFirstProduct() {
+		click1stProduct.click();
+	}
 	public void addFirstProductToCart() {
 		implicitlywaitmethod();
 		Add2Cart1.click();
@@ -119,6 +138,16 @@ public class InventoryPage extends AbstractMethods{
 		Add2Cart2.click();
 
 	}
+	
+	public void clickOnRemoveBtn() {
+		implicitlywaitmethod();
+		removeBtn1.click();
+		
+	}
+	
+	public void clickOnBackToProductsBtn() {
+		backToProductsBtn.click();
+	}
 	public void CartBtn() {
 		cartIcon.click();;
 	}
@@ -126,9 +155,25 @@ public class InventoryPage extends AbstractMethods{
 	public boolean CartIconDisplayed() {
 		return cartIcon.isDisplayed();
 	}
-	public void verifyCartNotification() {
+	public void verifyCartNotificationAfterAdding2Products() {
 		int numberOfProductsInCart = cartNotification.findElements(By.className("cart_item")).size();
 		Assert.assertEquals(numberOfProductsInCart, 2, "Unexpected number of products in the cart");
+
+		// Optionally, you can print the number of products for verification
+		System.out.println("Number of products in the cart: " + numberOfProductsInCart);
+
+	}
+	public void verifyCartNotificationAtResetMode() {
+		int numberOfProductsInCart = cartNotification.findElements(By.className("cart_list")).size();
+		Assert.assertEquals(numberOfProductsInCart, 0, "Unexpected number of products in the cart");
+
+		// Optionally, you can print the number of products for verification
+		System.out.println("Number of products in the cart: " + numberOfProductsInCart);
+
+	}
+	public void verifyCartNotificationAfterRemoving1stProduct() {
+		int numberOfProductsInCart = cartNotification.findElements(By.className("cart_item")).size();
+		Assert.assertEquals(numberOfProductsInCart, 1, "Unexpected number of products in the cart");
 
 		// Optionally, you can print the number of products for verification
 		System.out.println("Number of products in the cart: " + numberOfProductsInCart);
@@ -150,6 +195,23 @@ public class InventoryPage extends AbstractMethods{
 		linkdinIcon.click();
 		Actions actions = new Actions(driver);
 		actions.moveToElement(linkdinIcon).click().perform();
+	}
+	
+	public List<String> getProductInformation(){
+		// Create an empty list to store product names
+		List<String> productInformation = new ArrayList<>();
+
+		// Find all elements on the page with the class 'inventory_item_name'
+		List<WebElement> productElements = driver.findElements(By.xpath("//*[@id=\"inventory_item_container\"]/div/div/div[2]"));
+
+		// Iterate through each WebElement representing a product name
+		for (WebElement productElement : productElements) {
+			// Get the text of the product name element and add it to the list
+			productInformation.add(productElement.getText());
+		}
+
+		// Return the list of product names
+		return productInformation;
 	}
 	
 	

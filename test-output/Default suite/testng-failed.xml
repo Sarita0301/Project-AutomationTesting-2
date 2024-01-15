@@ -5,8 +5,8 @@
     <classes>
       <class name="TestCases.Trails2">
         <methods>
+          <include name="restAppStateFunction"/>
           <include name="tearDown"/>
-          <include name="CheckOutInformationPage"/>
           <include name="setUpofBrowser"/>
         </methods>
       </class> <!-- TestCases.Trails2 -->

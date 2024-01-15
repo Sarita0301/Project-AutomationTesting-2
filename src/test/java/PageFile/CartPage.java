@@ -44,6 +44,9 @@ public class CartPage extends AbstractMethods{
 	
 	@FindBy(xpath="//h2[@class='complete-header']")
 	WebElement successfullMsg;
+	
+	@FindBy(xpath="//h3[@data-test='error']")
+	WebElement errorMsg;
 
 	public CartPage(WebDriver driverhere) {
 		super(driverhere);
@@ -60,17 +63,32 @@ public class CartPage extends AbstractMethods{
 		System.out.println(checkOutInformationText.getText());
 	}
 
-	public void enterCheckoutInformation() throws IOException {
+	public void enterFirstNameCheckoutInformation() throws IOException {
 		FileInputStream fis= new FileInputStream("E:\\eclipse-workspace_Selenium\\Project-AutomationTesting-2\\src\\test\\java\\DataFile\\Data.Properties");
 		Properties p = new Properties();
 		p.load(fis);
 		String firstNameField=p.getProperty("firstName");
-		String lastNameField=p.getProperty("lastName");
-		String zipCodeField=p.getProperty("zipCode");
+		
 		firstName.sendKeys(firstNameField);
+		
+	}public void enterLastNameCheckoutInformation() throws IOException {
+		FileInputStream fis= new FileInputStream("E:\\eclipse-workspace_Selenium\\Project-AutomationTesting-2\\src\\test\\java\\DataFile\\Data.Properties");
+		Properties p = new Properties();
+		p.load(fis);
+		
+		String lastNameField=p.getProperty("lastName");
+		
 		lastName.sendKeys(lastNameField);
+	
+	}
+	public void enterZipCodeCheckoutInformation() throws IOException {
+		FileInputStream fis= new FileInputStream("E:\\eclipse-workspace_Selenium\\Project-AutomationTesting-2\\src\\test\\java\\DataFile\\Data.Properties");
+		Properties p = new Properties();
+		p.load(fis);
+		String zipCodeField=p.getProperty("zipCode");
 		zipCode.sendKeys(zipCodeField);
 	}
+	
 
 	public void continueBtn() {
 		continueBtn.click();
@@ -99,5 +117,10 @@ public class CartPage extends AbstractMethods{
 
 	public void verifyOrderSuccessfullMassage() {
 		Assert.assertEquals(successfullMsg.getText(), "Thank you for your order!");
+	}
+	
+	public void verifyCheckOutErrorMassage() {
+	Assert.assertTrue(errorMsg.isDisplayed(), "error Msg is not visible");
+	System.out.println(errorMsg.getText());
 	}
 }
