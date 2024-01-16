@@ -1,126 +1,314 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+<testng-results ignored="0" total="22" passed="21" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-17T02:28:42 IST" name="Default suite" finished-at="2024-01-17T02:28:53 IST" duration-ms="10367">
+  <suite started-at="2024-01-17T02:58:59 IST" name="Default suite" finished-at="2024-01-17T03:00:25 IST" duration-ms="86009">
     <groups>
     </groups>
-    <test started-at="2024-01-17T02:28:42 IST" name="Default test" finished-at="2024-01-17T02:28:53 IST" duration-ms="10367">
-      <class name="TestCases.Trails2">
-        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.Trails2@139982de]" started-at="2024-01-17T02:28:42 IST" name="setUpofBrowser" finished-at="2024-01-17T02:28:53 IST" duration-ms="10314" status="FAIL">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Could not start a new session. Response code 500. Message: session not created: Chrome failed to start: exited normally.
-  (session not created: DevToolsActivePort file doesn't exist)
-  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.) 
-Host info: host: 'LAPTOP-KG4G2VU7', ip: '192.168.0.106'
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: Chrome failed to start: exited normally.
-  (session not created: DevToolsActivePort file doesn't exist)
-  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.) 
-Host info: host: 'LAPTOP-KG4G2VU7', ip: '192.168.0.106'
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
-at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:51)
-at TestCases.Trails2.setUpofBrowser(Trails2.java:78)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+    <test started-at="2024-01-17T02:58:59 IST" name="Default test" finished-at="2024-01-17T03:00:25 IST" duration-ms="86009">
+      <class name="TestCases.SauceDemoAutomationTestCases">
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:58:59 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:03 IST" duration-ms="4177" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpofBrowser -->
-        <test-method signature="verifyAboutPage()[pri:1, instance:TestCases.Trails2@139982de]" started-at="2024-01-17T02:28:53 IST" name="verifyAboutPage" finished-at="2024-01-17T02:28:53 IST" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
+        <test-method signature="VerifyLoginWithValidData()[pri:1, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:03 IST" name="VerifyLoginWithValidData" finished-at="2024-01-17T02:59:03 IST" duration-ms="287" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLoginWithValidData -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:03 IST" name="tearDown" finished-at="2024-01-17T02:59:03 IST" duration-ms="195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:03 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:05 IST" duration-ms="1805" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="VerifyLoginWithInValidData()[pri:2, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:05 IST" name="VerifyLoginWithInValidData" finished-at="2024-01-17T02:59:06 IST" duration-ms="247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLoginWithInValidData -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:06 IST" name="tearDown" finished-at="2024-01-17T02:59:06 IST" duration-ms="125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:06 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:07 IST" duration-ms="1784" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="verifyLoginPageAcceptedUserDetails()[pri:3, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:07 IST" name="verifyLoginPageAcceptedUserDetails" finished-at="2024-01-17T02:59:07 IST" duration-ms="41" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginPageAcceptedUserDetails -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:07 IST" name="tearDown" finished-at="2024-01-17T02:59:08 IST" duration-ms="175" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:08 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:09 IST" duration-ms="1557" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="verifyLoginPagePasswordVisiblity()[pri:4, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:09 IST" name="verifyLoginPagePasswordVisiblity" finished-at="2024-01-17T02:59:09 IST" duration-ms="43" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginPagePasswordVisiblity -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:09 IST" name="tearDown" finished-at="2024-01-17T02:59:09 IST" duration-ms="185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:09 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:11 IST" duration-ms="1599" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="LogoutUser()[pri:5, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:11 IST" name="LogoutUser" finished-at="2024-01-17T02:59:11 IST" duration-ms="474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogoutUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:11 IST" name="tearDown" finished-at="2024-01-17T02:59:12 IST" duration-ms="181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:12 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:13 IST" duration-ms="1814" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="Add_To_Cart()[pri:6, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:13 IST" name="Add_To_Cart" finished-at="2024-01-17T02:59:14 IST" duration-ms="428" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_To_Cart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:14 IST" name="tearDown" finished-at="2024-01-17T02:59:14 IST" duration-ms="182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:14 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:16 IST" duration-ms="1674" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="removeProduct_InCartPage()[pri:7, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:16 IST" name="removeProduct_InCartPage" finished-at="2024-01-17T02:59:16 IST" duration-ms="469" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeProduct_InCartPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:16 IST" name="tearDown" finished-at="2024-01-17T02:59:16 IST" duration-ms="186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:16 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:18 IST" duration-ms="1654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="VerifyProductPgFooter_NavigatedTotwitter()[pri:8, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:18 IST" name="VerifyProductPgFooter_NavigatedTotwitter" finished-at="2024-01-17T02:59:24 IST" duration-ms="5532" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyProductPgFooter_NavigatedTotwitter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:24 IST" name="tearDown" finished-at="2024-01-17T02:59:24 IST" duration-ms="306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:24 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:26 IST" duration-ms="1607" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="VerifyProductPgFooter_NavigatedToFacebook()[pri:9, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:26 IST" name="VerifyProductPgFooter_NavigatedToFacebook" finished-at="2024-01-17T02:59:32 IST" duration-ms="6263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyProductPgFooter_NavigatedToFacebook -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:32 IST" name="tearDown" finished-at="2024-01-17T02:59:32 IST" duration-ms="250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:32 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:34 IST" duration-ms="1578" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="VerifyProductPgFooter_NavigatedToLinkedin()[pri:10, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:34 IST" name="VerifyProductPgFooter_NavigatedToLinkedin" finished-at="2024-01-17T02:59:39 IST" duration-ms="5515" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyProductPgFooter_NavigatedToLinkedin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:39 IST" name="tearDown" finished-at="2024-01-17T02:59:39 IST" duration-ms="247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:39 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:41 IST" duration-ms="1641" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="CheckOutInformationPage()[pri:11, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:41 IST" name="CheckOutInformationPage" finished-at="2024-01-17T02:59:42 IST" duration-ms="734" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckOutInformationPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:42 IST" name="tearDown" finished-at="2024-01-17T02:59:42 IST" duration-ms="192" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:42 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:44 IST" duration-ms="1633" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="placeOrder_withoutCheckoutInformation()[pri:12, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:44 IST" name="placeOrder_withoutCheckoutInformation" finished-at="2024-01-17T02:59:44 IST" duration-ms="512" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder_withoutCheckoutInformation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:44 IST" name="tearDown" finished-at="2024-01-17T02:59:44 IST" duration-ms="194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:44 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:46 IST" duration-ms="1682" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="placeOrder_withFirstNameCheckoutInformation()[pri:13, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:46 IST" name="placeOrder_withFirstNameCheckoutInformation" finished-at="2024-01-17T02:59:47 IST" duration-ms="540" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder_withFirstNameCheckoutInformation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:47 IST" name="tearDown" finished-at="2024-01-17T02:59:47 IST" duration-ms="177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:47 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:48 IST" duration-ms="1724" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="placeOrder_withOutZipCodeCheckoutInformation()[pri:14, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:48 IST" name="placeOrder_withOutZipCodeCheckoutInformation" finished-at="2024-01-17T02:59:49 IST" duration-ms="582" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder_withOutZipCodeCheckoutInformation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:49 IST" name="tearDown" finished-at="2024-01-17T02:59:49 IST" duration-ms="184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:49 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:51 IST" duration-ms="1558" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="placeOrder_withOutLastNameCheckoutInformation()[pri:15, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:51 IST" name="placeOrder_withOutLastNameCheckoutInformation" finished-at="2024-01-17T02:59:51 IST" duration-ms="601" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder_withOutLastNameCheckoutInformation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:51 IST" name="tearDown" finished-at="2024-01-17T02:59:52 IST" duration-ms="178" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:52 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:53 IST" duration-ms="1616" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="productDetailsPage()[pri:16, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:53 IST" name="productDetailsPage" finished-at="2024-01-17T02:59:54 IST" duration-ms="459" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productDetailsPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:54 IST" name="tearDown" finished-at="2024-01-17T02:59:54 IST" duration-ms="187" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:54 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:55 IST" duration-ms="1553" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="restAppStateFunction()[pri:17, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:55 IST" name="restAppStateFunction" finished-at="2024-01-17T02:59:56 IST" duration-ms="654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- restAppStateFunction -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:56 IST" name="tearDown" finished-at="2024-01-17T02:59:56 IST" duration-ms="177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:56 IST" name="setUpofBrowser" finished-at="2024-01-17T02:59:58 IST" duration-ms="1641" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="changeFilterName_AtoZ()[pri:18, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:58 IST" name="changeFilterName_AtoZ" finished-at="2024-01-17T02:59:58 IST" duration-ms="647" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changeFilterName_AtoZ -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:58 IST" name="tearDown" finished-at="2024-01-17T02:59:59 IST" duration-ms="194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T02:59:59 IST" name="setUpofBrowser" finished-at="2024-01-17T03:00:00 IST" duration-ms="1654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="changeFilterName_ZtoA()[pri:19, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T03:00:00 IST" name="changeFilterName_ZtoA" finished-at="2024-01-17T03:00:01 IST" duration-ms="680" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changeFilterName_ZtoA -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T03:00:01 IST" name="tearDown" finished-at="2024-01-17T03:00:01 IST" duration-ms="187" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T03:00:01 IST" name="setUpofBrowser" finished-at="2024-01-17T03:00:03 IST" duration-ms="1638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="changeFilterPrice_LowtoHigh()[pri:20, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T03:00:03 IST" name="changeFilterPrice_LowtoHigh" finished-at="2024-01-17T03:00:04 IST" duration-ms="681" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changeFilterPrice_LowtoHigh -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T03:00:04 IST" name="tearDown" finished-at="2024-01-17T03:00:04 IST" duration-ms="188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T03:00:04 IST" name="setUpofBrowser" finished-at="2024-01-17T03:00:05 IST" duration-ms="1727" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="changeFilterPrice_HightoLow()[pri:21, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T03:00:05 IST" name="changeFilterPrice_HightoLow" finished-at="2024-01-17T03:00:06 IST" duration-ms="706" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changeFilterPrice_HightoLow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T03:00:06 IST" name="tearDown" finished-at="2024-01-17T03:00:06 IST" duration-ms="188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUpofBrowser()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T03:00:06 IST" name="setUpofBrowser" finished-at="2024-01-17T03:00:08 IST" duration-ms="1586" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpofBrowser -->
+        <test-method signature="verifyAboutPage()[pri:22, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T03:00:08 IST" name="verifyAboutPage" finished-at="2024-01-17T03:00:25 IST" duration-ms="16636" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[Could not start a new session. Response code 500. Message: session not created: Chrome failed to start: exited normally.
-  (session not created: DevToolsActivePort file doesn't exist)
-  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.) 
-Host info: host: 'LAPTOP-KG4G2VU7', ip: '192.168.0.106'
+              <![CDATA[disconnected: Unable to receive message from renderer
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=120.0.6099.218)
 Build info: version: '4.12.1', revision: '8e34639b11'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]]]>
+Command: [b91d5c787f7fb5c30256637d08b16494, findElement {using=xpath, value=//h1[text()='Start testing in minutes']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.218, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\aryan\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51061}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51061/devtoo..., se:cdpVersion: 120.0.6099.218, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b91d5c787f7fb5c30256637d08b16494]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: Chrome failed to start: exited normally.
-  (session not created: DevToolsActivePort file doesn't exist)
-  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.) 
-Host info: host: 'LAPTOP-KG4G2VU7', ip: '192.168.0.106'
+              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: Unable to receive message from renderer
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=120.0.6099.218)
 Build info: version: '4.12.1', revision: '8e34639b11'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+Command: [b91d5c787f7fb5c30256637d08b16494, findElement {using=xpath, value=//h1[text()='Start testing in minutes']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.218, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\aryan\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51061}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51061/devtoo..., se:cdpVersion: 120.0.6099.218, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b91d5c787f7fb5c30256637d08b16494
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
-at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:51)
-at TestCases.Trails2.setUpofBrowser(Trails2.java:78)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy16.isDisplayed(Unknown Source)
+at PageFile.AboutPage.verifyAboutPgTryItFunctions(AboutPage.java:50)
+at TestCases.SauceDemoAutomationTestCases.verifyAboutPage(SauceDemoAutomationTestCases.java:718)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
@@ -145,15 +333,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAboutPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.Trails2@139982de]" started-at="2024-01-17T02:28:53 IST" name="tearDown" finished-at="2024-01-17T02:28:53 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SauceDemoAutomationTestCases@3cd3e762]" started-at="2024-01-17T03:00:25 IST" name="tearDown" finished-at="2024-01-17T03:00:25 IST" duration-ms="200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- TestCases.Trails2 -->
+      </class> <!-- TestCases.SauceDemoAutomationTestCases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

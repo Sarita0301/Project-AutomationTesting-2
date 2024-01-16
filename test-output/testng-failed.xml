@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.Trails2">
+      <class name="TestCases.SauceDemoAutomationTestCases">
         <methods>
-          <include name="verifyAboutPage"/>
           <include name="tearDown"/>
           <include name="setUpofBrowser"/>
+          <include name="verifyAboutPage"/>
         </methods>
-      </class> <!-- TestCases.Trails2 -->
+      </class> <!-- TestCases.SauceDemoAutomationTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
