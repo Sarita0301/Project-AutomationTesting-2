@@ -12,11 +12,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends AbstractMethods{
 	WebDriver driver;
+
 	By UserName=By.id("user-name");
 	By Password=By.id("password");
 	By loginBtn=By.id("login-button");
+
 	@FindBy(xpath = "/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3")
-    private WebElement errorLabel;
+	private WebElement errorLabel;
 
 	public LoginPage(WebDriver driverhere) {
 		//driver=d;
@@ -49,15 +51,15 @@ public class LoginPage extends AbstractMethods{
 	public void clickonLoginBtn() {
 		implicitlywaitmethod();
 		driver.findElement(loginBtn).click();
-		
+
 	}
 
 	public boolean isErrorDisplayed() {
-        return errorLabel.isDisplayed();
-    }
+		return errorLabel.isDisplayed();
+	}
 
-    public String getErrorMessage() {
-        return errorLabel.getText();
-    }
+	public String getErrorMessage() {
+		return errorLabel.getText();
+	}
 
 }

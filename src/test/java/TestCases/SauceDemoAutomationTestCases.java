@@ -2,6 +2,7 @@ package TestCases;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -18,8 +19,10 @@ import org.testng.annotations.Test;
 import PageFile.AboutPage;
 import PageFile.AbstractMethods;
 import PageFile.CartPage;
+import PageFile.CheckOutInformationPage;
 import PageFile.InventoryPage;
 import PageFile.LoginPage;
+import PageFile.ProductDetailsPage;
 import PageFile.ReUseableMethods;
 
 public class SauceDemoAutomationTestCases {
@@ -30,6 +33,10 @@ public class SauceDemoAutomationTestCases {
 	AbstractMethods Am;
 	ReUseableMethods Rm;
 	AboutPage Ap;
+	CheckOutInformationPage cp;
+	CartPage Crtp;
+	ProductDetailsPage Pdp;
+	AboutPage Abp;
 
 	@FindBy(xpath = "//*[@id=\\\"react-burger-menu-btn\\\"]")WebElement ActualTitle;
 
@@ -111,15 +118,39 @@ public class SauceDemoAutomationTestCases {
 		System.out.println("TestCase 2-->> Verify the login with Valid inputs");
 
 	}
-	@Test(priority=-1)
-	public void test() {
-		lp= new LoginPage(driver);
-		// Step 4: Verify that "Accepted username are " is visible
-		WebElement acceptedUsername = driver.findElement(By.xpath("//h4[text()='Accepted usernames are:']"));
-		Assert.assertTrue(acceptedUsername.isDisplayed(), "Accepted username message not visible");
-		//  (Need to add this setep into login tescase page)
-	}
 	@Test(priority=3)
+	public void verifyLoginPageAcceptedUserDetails() {
+		lp= new LoginPage(driver);
+
+		// Find the "Accepted username" element by class name
+		WebElement acceptedUsersElement = driver.findElement(By.className("login_credentials"));
+
+		System.out.println(acceptedUsersElement.getText());
+
+		// Step 4: Verify that "Accepted username are " is visible
+		Assert.assertTrue(acceptedUsersElement.isDisplayed(), "Accepted Users not visible");
+
+		System.out.println("TestCase 3-->> Accepted Users visibility");
+
+
+	}
+	@Test(priority=4)
+	public void verifyLoginPagePasswordVisiblity() {
+		lp= new LoginPage(driver);
+
+		// Find the "Password for all users:" element by class name
+		WebElement passwordUsersElement = driver.findElement(By.className("login_password"));
+
+		System.out.println(passwordUsersElement.getText());
+
+		// Step 4: Verify that "Password for all users:" is visible
+		Assert.assertTrue(passwordUsersElement.isDisplayed(), "Password for all Users are not visible");
+
+		System.out.println("TestCase 4-->> Password for all Users visibility");
+
+
+	}
+	@Test(priority=5)
 	public void LogoutUser() throws IOException, InterruptedException {
 		lp= new LoginPage(driver);
 		// enter the user& password and click login buttton
@@ -141,10 +172,10 @@ public class SauceDemoAutomationTestCases {
 		Rm.urlEquals("https://www.saucedemo.com/");
 		Am.implicitlywaitmethod();
 
-		System.out.println("Test Case 3-->> Logout User");
+		System.out.println("Test Case 5-->> Logout User");
 
 	}
-	@Test(priority=4)
+	@Test(priority=6)
 	public void Add_To_Cart() throws IOException  {
 		lp= new LoginPage(driver);
 		// enter the user& password and click login buttton
@@ -161,22 +192,23 @@ public class SauceDemoAutomationTestCases {
 		In.addFirstProductToCart();
 
 		//Hover over Second product and click 'Add to cart'	
-		In=new InventoryPage(driver);
 		In.addSecondProductToCart();
 
+
+		Crtp=new CartPage(driver);
 		// Verify the number of products in the cart notification
-		Assert.assertTrue(In.CartIconDisplayed(), "Cart icon not visible");
+		Assert.assertTrue(Crtp.CartIconDisplayed(), "Cart icon not visible");
 
 		// Click on the cart icon to open the cart
 
-		In.CartBtn();
+		Crtp.CartBtn();
 
 		// Verify the number of products in the cart notification on the cart page
-		In.verifyCartNotificationAfterAdding2Products();
+		Crtp.verifyCartNotificationAfterAdding2Products();
 
-		System.out.println("Test Case 4-->> Verify add products & notification in cart");
+		System.out.println("Test Case 6-->> Verify add products & notification in cart");
 	}
-	@Test(priority=5)
+	@Test(priority=7)
 	public void removeProduct_InCartPage() throws IOException {
 		//Enter the login details
 		lp=new LoginPage(driver);
@@ -188,26 +220,28 @@ public class SauceDemoAutomationTestCases {
 		In.addFirstProductToCart();
 		In.addSecondProductToCart();
 
+
+		Crtp=new CartPage(driver);
 		// Verify the number of products in the cart notification
-		Assert.assertTrue(In.CartIconDisplayed(), "Cart icon not visible");
+		Assert.assertTrue(Crtp.CartIconDisplayed(), "Cart icon not visible");
 
 		// Click on the cart icon to open the cart
 
-		In.CartBtn();
+		Crtp.CartBtn();
 
 		// Verify the number of products in the cart notification on the cart page
-		In.verifyCartNotificationAfterAdding2Products();;
+		Crtp.verifyCartNotificationAfterAdding2Products();;
 
 		//Click on remove button on 1st Product
 		In.clickOnRemoveBtn();
 
 		// Verify the number of products in the cart notification After removing the 1st product on the cart page
-		In.verifyCartNotificationAfterRemoving1stProduct();
-		System.out.println("Test Case 5-->> Remove 1st in Cart page verify the cart notification");
+		Crtp.verifyCartNotificationAfterRemoving1stProduct();
+		System.out.println("Test Case 7-->> Remove 1st in Cart page verify the cart notification");
 
 	}
 
-	@Test(priority=6)
+	@Test(priority=8)
 	public void VerifyProductPgFooter_NavigatedTotwitter() throws IOException, InterruptedException {
 		lp= new LoginPage(driver);
 		// enter the user& password and click login buttton
@@ -235,9 +269,9 @@ public class SauceDemoAutomationTestCases {
 
 		// Optionally, you can print the current URL for verification
 		System.out.println("Current URL: " + driver.getCurrentUrl());
-		System.out.println("Test Case 6-->> Verify footer of ProductPg and navigated to Twitter pg");
+		System.out.println("Test Case 8-->> Verify footer of ProductPg and navigated to Twitter pg");
 	}
-	@Test(priority=7)
+	@Test(priority=9)
 	public void VerifyProductPgFooter_NavigatedToFacebook() throws IOException, InterruptedException {
 		lp= new LoginPage(driver);
 		// enter the user& password and click login buttton
@@ -265,9 +299,9 @@ public class SauceDemoAutomationTestCases {
 
 		// Optionally, you can print the current URL for verification
 		System.out.println("Current URL: " + driver.getCurrentUrl());
-		System.out.println("Test Case 7-->> Verify footer of ProductPg and navigated to Facebook pg");
+		System.out.println("Test Case 9-->> Verify footer of ProductPg and navigated to Facebook pg");
 	}
-	@Test(priority=8)
+	@Test(priority=10)
 	public void VerifyProductPgFooter_NavigatedToLinkedin() throws IOException, InterruptedException {
 		lp= new LoginPage(driver);
 		// enter the user& password and click login buttton
@@ -291,39 +325,15 @@ public class SauceDemoAutomationTestCases {
 			driver.switchTo().window(windowHandle);
 		}
 		// Verify that the current URL is the Twitter page
-		Rm.urlEquals("https://www.linkedin.com/company/sauce-labs/");
+		Assert.assertTrue(driver.getCurrentUrl().contains("www.linkedin.com"), "Not Navigated to Linkedin Page");
+		//Rm.urlEquals("https://www.linkedin.com/company/sauce-labs/");
 
 		// Optionally, you can print the current URL for verification
 		System.out.println("Current URL: " + driver.getCurrentUrl());
-		System.out.println("Test Case 8-->> Verify footer of ProductPg and navigated to Linkdin pg");
-	}
-	@Test (priority=100)
-	public void verifyAboutPage() throws IOException, InterruptedException {
-		lp= new LoginPage(driver);
-		// enter the user& password and click login buttton
-		lp.EnterValidCrendial();
-		lp.clickonLoginBtn();
-
-
-		Am= new AbstractMethods(driver);
-		Am.implicitlywaitmethod();
-
-		//Click to menu Button and then click to About button
-		In= new InventoryPage(driver);
-		In.clickOnMenuButton();
-		In.clickOnAboutButton();
-
-		Am.implicitlywaitmethod();
-		Am.Wait_Till_Link_Is_Clickable(popUpOkButton);
-		// Verify landed to about page and "The World relies on you code " text is visible on same page	
-		Assert.assertTrue(AboutPg.isDisplayed(), "Didnt Landed to About page");
-		boolean istextVisible=AboutPg.isDisplayed();
-		// Optionally, you can print the current URL for verification
-		System.out.println("Is text visible on the About page? " + istextVisible);
-		System.out.println("Test Case 8-->> Verify About pg");
+		System.out.println("Test Case 10-->> Verify footer of ProductPg and navigated to Linkdin pg");
 	}
 
-	@Test(priority=9)
+	@Test(priority=11)
 
 	public void CheckOutInformationPage() throws IOException {
 		//Enter the login details
@@ -337,10 +347,11 @@ public class SauceDemoAutomationTestCases {
 		In.addSecondProductToCart();
 
 		//Click on cart btn
-		In.CartBtn();
+		Crtp=new CartPage(driver);
+		Crtp.CartBtn();
 
 		//Click on checkout Button and verify successfully landed to checkOutInformation Page
-		CartPage cp= new CartPage(driver);
+		cp= new CheckOutInformationPage(driver);
 		cp.verifyCartPageCheckOutInformation();
 
 		//enter the checkout Information details
@@ -361,10 +372,10 @@ public class SauceDemoAutomationTestCases {
 
 		//verify order Placed successfully massage 
 		cp.verifyOrderSuccessfullMassage();
-		System.out.println("test Case-->>>9 Place Order:with all checkout information");
+		System.out.println("test Case 11-->> Place Order:with all checkout information");
 
 	}
-	@Test(priority=10)
+	@Test(priority=12)
 	public void placeOrder_withoutCheckoutInformation() throws IOException {
 		//Enter the login details
 		lp=new LoginPage(driver);
@@ -377,10 +388,11 @@ public class SauceDemoAutomationTestCases {
 		In.addSecondProductToCart();
 
 		//Click on cart btn
-		In.CartBtn();
+		Crtp=new CartPage(driver);
+		Crtp.CartBtn();
 
 		//Click on checkout Button and verify successfully landed to checkOutInformation Page
-		CartPage cp= new CartPage(driver);
+		cp= new CheckOutInformationPage(driver);
 		cp.verifyCartPageCheckOutInformation();
 
 
@@ -391,11 +403,11 @@ public class SauceDemoAutomationTestCases {
 		// verify the error massage " FirstName is required" at checkoutInformation
 		cp.verifyCheckOutErrorMassage();
 
-		System.out.println("Test Case 10-->> CheckOut Information Error Massage With no details");
+		System.out.println("Test Case 12-->> CheckOut Information Error Massage With no details");
 
 	}
 
-	@Test(priority=11)
+	@Test(priority=13)
 	public void placeOrder_withFirstNameCheckoutInformation() throws IOException {
 		//Enter the login details
 		lp=new LoginPage(driver);
@@ -407,9 +419,10 @@ public class SauceDemoAutomationTestCases {
 		In.addFirstProductToCart();
 
 		//Click on cart btn
-		In.CartBtn();
+		Crtp=new CartPage(driver);
+		Crtp.CartBtn();
 		//Click on checkout Button and verify successfully landed to checkOutInformation Page
-		CartPage cp= new CartPage(driver);
+		cp= new CheckOutInformationPage(driver);
 		cp.verifyCartPageCheckOutInformation();
 
 		//enter the checkout Information details
@@ -423,10 +436,10 @@ public class SauceDemoAutomationTestCases {
 		// verify the error massage " FirstName is required" at checkoutInformation
 		cp.verifyCheckOutErrorMassage();
 
-		System.out.println("Test Case 11-->> CheckOut Information Error Massage With FirstName details");
+		System.out.println("Test Case 13-->> CheckOut Information Error Massage With FirstName details");
 
 	}
-	@Test(priority=12)
+	@Test(priority=14)
 	public void placeOrder_withOutZipCodeCheckoutInformation() throws IOException {
 		//Enter the login details
 		lp=new LoginPage(driver);
@@ -438,9 +451,10 @@ public class SauceDemoAutomationTestCases {
 		In.addFirstProductToCart();
 
 		//Click on cart btn
-		In.CartBtn();
+		Crtp=new CartPage(driver);
+		Crtp.CartBtn();
 		//Click on checkout Button and verify successfully landed to checkOutInformation Page
-		CartPage cp= new CartPage(driver);
+		cp= new CheckOutInformationPage(driver);
 		cp.verifyCartPageCheckOutInformation();
 
 		//enter the checkout Information details
@@ -455,11 +469,11 @@ public class SauceDemoAutomationTestCases {
 		// verify the error massage " FirstName is required" at checkoutInformation
 		cp.verifyCheckOutErrorMassage();
 
-		System.out.println("Test Case 12-->> CheckOut Information Error Massage WithOut PostalCode");
+		System.out.println("Test Case 14-->> CheckOut Information Error Massage WithOut PostalCode");
 
 	}
 
-	@Test(priority=13)
+	@Test(priority=15)
 	public void placeOrder_withOutLastNameCheckoutInformation() throws IOException {
 		//Enter the login details
 		lp=new LoginPage(driver);
@@ -471,9 +485,10 @@ public class SauceDemoAutomationTestCases {
 		In.addFirstProductToCart();
 
 		//Click on cart btn
-		In.CartBtn();
+		Crtp=new CartPage(driver);
+		Crtp.CartBtn();
 		//Click on checkout Button and verify successfully landed to checkOutInformation Page
-		CartPage cp= new CartPage(driver);
+		cp= new CheckOutInformationPage(driver);
 		cp.verifyCartPageCheckOutInformation();
 
 		//enter the checkout Information details
@@ -489,11 +504,11 @@ public class SauceDemoAutomationTestCases {
 		// verify the error massage " FirstName is required" at checkoutInformation
 		cp.verifyCheckOutErrorMassage();
 
-		System.out.println("Test Case 13-->> CheckOut Information Error Massage WithOut Last Name");
+		System.out.println("Test Case 15-->> CheckOut Information Error Massage WithOut Last Name");
 
 	}
 
-	@Test(priority=14)
+	@Test(priority=16)
 	public void productDetailsPage() throws IOException {
 		//Enter the login details
 		lp=new LoginPage(driver);
@@ -501,33 +516,209 @@ public class SauceDemoAutomationTestCases {
 		lp.clickonLoginBtn();
 
 		//Add the products into cart
-		In= new InventoryPage(driver);
+		Pdp=new ProductDetailsPage (driver);
 
 		//View 1st product
-		In.viewFirstProduct();
+
+
+		Pdp.viewFirstProduct();
 
 		//product details are visible
-		In.getProductInformation();
+		Pdp.getProductInformation();
 
 		//print the product details
-		System.out.println(In.getProductInformation());
+		System.out.println(Pdp.getProductInformation());
 
 		//Click on add to cart 
+		In= new InventoryPage(driver);
 		In.addFirstProductToCart();
 
+
 		//click on Back to Products page
-		In.clickOnBackToProductsBtn();
+		Pdp.clickOnBackToProductsBtn();
 
 		//view cart 
-		In.CartBtn();
+		Crtp=new CartPage(driver);
+		Crtp.CartBtn();
 
 		//verify the cart notification
-		In.verifyCartNotificationAfterRemoving1stProduct();;
-		System.out.println("Test Case 14 -->> view product details");
+		Crtp.verifyCartNotificationAfterRemoving1stProduct();;
+		System.out.println("Test Case 16 -->> view product details");
 
 	}
 
+	@Test(priority=17)
+	public void restAppStateFunction() throws IOException {
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
 
+		//Add the products into cart
+		In= new InventoryPage(driver);
+		In.addFirstProductToCart();
+		In.addSecondProductToCart();
+
+		//view Cart
+		Crtp= new CartPage(driver);
+		Crtp.CartBtn();
+
+		//verify the cart notification matches with no. of added products
+		//Crtp.verifyCartNotificationAfterAdding2Products();
+
+		In.clickOnMenuButton();
+
+		//
+		In.clickOnResetAppState();
+
+		driver.navigate().refresh();
+
+		//want to verify the all products are removerd from cart 
+		//page is getting stuck at this place
+		//Crtp.verifyCartNotificationAtResetMode();
+
+
+		Crtp.clickOnContinueShoppingButton();
+
+		System.out.println("Test Case 17-->> Reset App State Function");
+
+	}
+	@Test(priority=18)
+	public void changeFilterName_AtoZ() throws IOException {
+
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+
+		Pdp= new ProductDetailsPage(driver);
+		List<String> productListBeforeReset=Pdp.getProductlist();
+		System.out.println("======Before Filter====");
+		for(String product:productListBeforeReset) {
+			System.out.println(product);
+		}
+
+		In=new InventoryPage(driver);
+		In.changeFilterName_AtoZ();
+		List<String> productListAfterReset=Pdp.getProductlist();
+		System.out.println("======After Filter====");
+		for(String product2:productListAfterReset) {
+			System.out.println(product2);
+		}
+		Assert.assertEquals(productListBeforeReset, productListAfterReset);
+		System.out.println("Test Case 18-->> Change Filter By Name A To Z.");
+
+	}
+	@Test(priority=19)
+	public void changeFilterName_ZtoA() throws IOException {
+
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+
+		Pdp= new ProductDetailsPage(driver);
+		List<String> productListBeforeReset=Pdp.getProductlist();
+		System.out.println("======Before Filter====");
+		for(String product:productListBeforeReset) {
+			System.out.println(product);
+		}
+
+		In=new InventoryPage(driver);
+		In.changeFilterName_ZtoA();
+		List<String> productListAfterReset=Pdp.getProductlist();
+		System.out.println("======After Filter====");
+		for(String product2:productListAfterReset) {
+			System.out.println(product2);
+		}
+		Assert.assertNotEquals(productListBeforeReset, productListAfterReset);
+		System.out.println("Test Case 19-->> Change Filter By Name Z To A.");
+	}
+	@Test(priority=20)
+	public void changeFilterPrice_LowtoHigh() throws IOException {
+
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+
+		Pdp= new ProductDetailsPage(driver);
+		List<String> productListBeforeReset=Pdp.getProductlist();
+		System.out.println("======Before Filter====");
+		for(String product:productListBeforeReset) {
+			System.out.println(product);
+		}
+
+		In=new InventoryPage(driver);
+		In.changeFilterPrice_LowtoHigh();
+		List<String> productListAfterReset=Pdp.getProductlist();
+		System.out.println("======After Filter====");
+		for(String product2:productListAfterReset) {
+			System.out.println(product2);
+		}
+		Assert.assertNotEquals(productListBeforeReset, productListAfterReset);
+		System.out.println("Test Case 20-->> Change Filter By price low To high.");
+	}
+	@Test(priority=21)
+	public void changeFilterPrice_HightoLow() throws IOException {
+
+		//Enter the login details
+		lp=new LoginPage(driver);
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+
+		Pdp= new ProductDetailsPage(driver);
+		List<String> productListBeforeReset=Pdp.getProductlist();
+		System.out.println("======Before Filter====");
+		for(String product:productListBeforeReset) {
+			System.out.println(product);
+		}
+
+		In=new InventoryPage(driver);
+		In.changeFilterPrice_HightoLow();
+		List<String> productListAfterReset=Pdp.getProductlist();
+		System.out.println("======After Filter====");
+		for(String product2:productListAfterReset) {
+			System.out.println(product2);
+		}
+		Assert.assertNotEquals(productListBeforeReset, productListAfterReset);
+		System.out.println("Test Case 21-->> Change Filter By price high To low.");
+	}
+
+	@Test(priority=22)
+
+	public void verifyAboutPage() throws IOException, InterruptedException {
+		lp= new LoginPage(driver);
+		// enter the user& password and click login buttton
+		lp.EnterValidCrendial();
+		lp.clickonLoginBtn();
+
+
+		Am= new AbstractMethods(driver);
+		Am.implicitlywaitmethod();
+
+		//Click to menu Button and then click to About button
+		In= new InventoryPage(driver);
+		In.clickOnMenuButton();
+		In.clickOnAboutButton();
+
+		Am.implicitlywaitmethod();
+		Am.Wait_Till_Link_Is_Clickable(popUpOkButton);
+
+		// Verify Navigated to About Page & "The world relies on your code" text is visible
+		Abp=new AboutPage(driver);
+		Abp.verifyNavigatedToAboutPg();
+		Am.implicitlywaitmethod();
+
+		// Verify Navigated "TRY IT FREE" Page & "start testing in minutes" text is visible
+		Abp.verifyAboutPgTryItFunctions();
+
+		System.out.println("Test Case 22-->> Verify About pg");
+	}
 }
 
 

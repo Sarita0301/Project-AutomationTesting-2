@@ -135,21 +135,5 @@ public class Trails_Class {
 
 
 	}
-//	// Method to get the list of product names
-//		public List<String> getProductNames() {
-//		    // Create an empty list to store product names
-//		    List<String> productNames = new ArrayList<>();
-//
-//		    // Find all elements on the page with the class 'inventory_item_name'
-//		    List<WebElement> productElements = driver.findElements(By.xpath("//div[@class='inventory_item_name']"));
-//
-//		    // Iterate through each WebElement representing a product name
-//		    for (WebElement productElement : productElements) {
-//		        // Get the text of the product name element and add it to the list
-//		        productNames.add(productElement.getText());
-//		    }
-//
-//		    // Return the list of product names
-//		    return productNames;
-//		}
+	
 }
