@@ -11,10 +11,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ProductDetailsPage {
 	WebDriver driver;
-	@FindBy(xpath="//*[@id=\"item_4_img_link\"]/img")
+	@FindBy(xpath="//a[@id=\"item_4_img_link\"]/img")
 	WebElement click1stProduct;
 
-	@FindBy(xpath="//*[@id=\"back-to-products\"]")
+	@FindBy(xpath="//button[@id=\"back-to-products\"]")
 	WebElement backToProductsBtn;
 
 

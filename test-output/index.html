@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\aryan\AppData\Local\Temp\testng-eclipse--158862705\testng-customsuite.xml</span>
+                    <span>C:\Users\aryan\AppData\Local\Temp\testng-eclipse-1233670967\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -243,34 +243,20 @@
                   <a name="verifyAboutPage">
                   </a> <!-- verifyAboutPage -->
                   <span class="method-name">verifyAboutPage</span>
-                  <div class="stack-trace">org.openqa.selenium.WebDriverException: disconnected: Unable to receive message from renderer
-  (failed to check if window was closed: disconnected: not connected to DevTools)
-  (Session info: chrome=120.0.6099.218)
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //div[@class=&apos;your-class-name&apos;]/p
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.12.1&apos;, revision: &apos;8e34639b11&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b91d5c787f7fb5c30256637d08b16494, findElement {using=xpath, value=//h1[text()=&apos;Start testing in minutes&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.218, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\aryan\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51061}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51061/devtoo..., se:cdpVersion: 120.0.6099.218, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b91d5c787f7fb5c30256637d08b16494
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy16.isDisplayed(Unknown Source)
-	at PageFile.AboutPage.verifyAboutPgTryItFunctions(AboutPage.java:50)
-	at TestCases.SauceDemoAutomationTestCases.verifyAboutPage(SauceDemoAutomationTestCases.java:718)
+	at PageFile.AboutPage.verifyNavigatedToAboutPg(AboutPage.java:38)
+	at TestCases.SauceDemoAutomationTestCases.verifyAboutPage(SauceDemoAutomationTestCases.java:717)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -461,7 +447,7 @@ Session ID: b91d5c787f7fb5c30256637d08b16494
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\aryan\AppData\Local\Temp\testng-eclipse--158862705\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\aryan\AppData\Local\Temp\testng-eclipse-1233670967\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -514,96 +500,96 @@ data.addRows(22);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyAboutPage')
 data.setCell(0, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(0, 3, 16636);
+data.setCell(0, 3, 19692);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'VerifyProductPgFooter_NavigatedToFacebook')
 data.setCell(1, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(1, 3, 6263);
+data.setCell(1, 3, 6380);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'VerifyProductPgFooter_NavigatedTotwitter')
 data.setCell(2, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(2, 3, 5532);
+data.setCell(2, 3, 5927);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'VerifyProductPgFooter_NavigatedToLinkedin')
 data.setCell(3, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(3, 3, 5515);
+data.setCell(3, 3, 5793);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'CheckOutInformationPage')
+data.setCell(4, 1, 'restAppStateFunction')
 data.setCell(4, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(4, 3, 734);
+data.setCell(4, 3, 1292);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'changeFilterPrice_HightoLow')
+data.setCell(5, 1, 'CheckOutInformationPage')
 data.setCell(5, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(5, 3, 706);
+data.setCell(5, 3, 1203);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'changeFilterPrice_LowtoHigh')
+data.setCell(6, 1, 'changeFilterPrice_HightoLow')
 data.setCell(6, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(6, 3, 681);
+data.setCell(6, 3, 1181);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'changeFilterName_ZtoA')
+data.setCell(7, 1, 'changeFilterPrice_LowtoHigh')
 data.setCell(7, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(7, 3, 680);
+data.setCell(7, 3, 1104);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'restAppStateFunction')
+data.setCell(8, 1, 'changeFilterName_ZtoA')
 data.setCell(8, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(8, 3, 654);
+data.setCell(8, 3, 1103);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'changeFilterName_AtoZ')
 data.setCell(9, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(9, 3, 647);
+data.setCell(9, 3, 1060);
 data.setCell(10, 0, 10)
 data.setCell(10, 1, 'placeOrder_withOutLastNameCheckoutInformation')
 data.setCell(10, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(10, 3, 601);
+data.setCell(10, 3, 942);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'placeOrder_withOutZipCodeCheckoutInformation')
 data.setCell(11, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(11, 3, 582);
+data.setCell(11, 3, 909);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'placeOrder_withFirstNameCheckoutInformation')
+data.setCell(12, 1, 'placeOrder_withoutCheckoutInformation')
 data.setCell(12, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(12, 3, 540);
+data.setCell(12, 3, 903);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'placeOrder_withoutCheckoutInformation')
+data.setCell(13, 1, 'placeOrder_withFirstNameCheckoutInformation')
 data.setCell(13, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(13, 3, 512);
+data.setCell(13, 3, 889);
 data.setCell(14, 0, 14)
 data.setCell(14, 1, 'LogoutUser')
 data.setCell(14, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(14, 3, 474);
+data.setCell(14, 3, 814);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'removeProduct_InCartPage')
+data.setCell(15, 1, 'productDetailsPage')
 data.setCell(15, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(15, 3, 469);
+data.setCell(15, 3, 794);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'productDetailsPage')
+data.setCell(16, 1, 'removeProduct_InCartPage')
 data.setCell(16, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(16, 3, 459);
+data.setCell(16, 3, 702);
 data.setCell(17, 0, 17)
 data.setCell(17, 1, 'Add_To_Cart')
 data.setCell(17, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(17, 3, 428);
+data.setCell(17, 3, 627);
 data.setCell(18, 0, 18)
 data.setCell(18, 1, 'VerifyLoginWithValidData')
 data.setCell(18, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(18, 3, 287);
+data.setCell(18, 3, 504);
 data.setCell(19, 0, 19)
 data.setCell(19, 1, 'VerifyLoginWithInValidData')
 data.setCell(19, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(19, 3, 247);
+data.setCell(19, 3, 388);
 data.setCell(20, 0, 20)
 data.setCell(20, 1, 'verifyLoginPagePasswordVisiblity')
 data.setCell(20, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(20, 3, 43);
+data.setCell(20, 3, 82);
 data.setCell(21, 0, 21)
 data.setCell(21, 1, 'verifyLoginPageAcceptedUserDetails')
 data.setCell(21, 2, 'TestCases.SauceDemoAutomationTestCases')
-data.setCell(21, 3, 41);
+data.setCell(21, 3, 58);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 42 seconds</span>
+              <span class="suite-total-time">Total running time: 52 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -636,265 +622,265 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyLoginWithValidData</span>
-                <span class="method-start">4178 ms</span>
+                <span class="method-start">6944 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">4468 ms</span>
+                <span class="method-start">7457 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">4665 ms</span>
+                <span class="method-start">7844 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyLoginWithInValidData</span>
-                <span class="method-start">6471 ms</span>
+                <span class="method-start">10321 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">6719 ms</span>
+                <span class="method-start">10711 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">6845 ms</span>
+                <span class="method-start">10914 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyLoginPageAcceptedUserDetails</span>
-                <span class="method-start">8629 ms</span>
+                <span class="method-start">13619 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">8671 ms</span>
+                <span class="method-start">13679 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">8847 ms</span>
+                <span class="method-start">13918 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyLoginPagePasswordVisiblity</span>
-                <span class="method-start">10404 ms</span>
+                <span class="method-start">17252 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">10448 ms</span>
+                <span class="method-start">17336 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">10635 ms</span>
+                <span class="method-start">17610 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">LogoutUser</span>
-                <span class="method-start">12234 ms</span>
+                <span class="method-start">20562 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">12710 ms</span>
+                <span class="method-start">21379 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">12893 ms</span>
+                <span class="method-start">21678 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Add_To_Cart</span>
-                <span class="method-start">14707 ms</span>
+                <span class="method-start">24106 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">15136 ms</span>
+                <span class="method-start">24735 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">15319 ms</span>
+                <span class="method-start">24948 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">removeProduct_InCartPage</span>
-                <span class="method-start">16994 ms</span>
+                <span class="method-start">27335 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">17464 ms</span>
+                <span class="method-start">28039 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">17651 ms</span>
+                <span class="method-start">28281 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyProductPgFooter_NavigatedTotwitter</span>
-                <span class="method-start">19305 ms</span>
+                <span class="method-start">31035 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">24839 ms</span>
+                <span class="method-start">36963 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">25146 ms</span>
+                <span class="method-start">37294 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyProductPgFooter_NavigatedToFacebook</span>
-                <span class="method-start">26753 ms</span>
+                <span class="method-start">39401 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">33020 ms</span>
+                <span class="method-start">45783 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">33271 ms</span>
+                <span class="method-start">46161 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyProductPgFooter_NavigatedToLinkedin</span>
-                <span class="method-start">34849 ms</span>
+                <span class="method-start">48371 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">40365 ms</span>
+                <span class="method-start">54166 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">40614 ms</span>
+                <span class="method-start">54514 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">CheckOutInformationPage</span>
-                <span class="method-start">42255 ms</span>
+                <span class="method-start">56871 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">42989 ms</span>
+                <span class="method-start">58075 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">43182 ms</span>
+                <span class="method-start">58264 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">placeOrder_withoutCheckoutInformation</span>
-                <span class="method-start">44815 ms</span>
+                <span class="method-start">61068 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">45329 ms</span>
+                <span class="method-start">61972 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">45524 ms</span>
+                <span class="method-start">62214 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">placeOrder_withFirstNameCheckoutInformation</span>
-                <span class="method-start">47207 ms</span>
+                <span class="method-start">64636 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">47748 ms</span>
+                <span class="method-start">65526 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">47926 ms</span>
+                <span class="method-start">65775 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">placeOrder_withOutZipCodeCheckoutInformation</span>
-                <span class="method-start">49650 ms</span>
+                <span class="method-start">68431 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">50232 ms</span>
+                <span class="method-start">69341 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">50417 ms</span>
+                <span class="method-start">69596 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">placeOrder_withOutLastNameCheckoutInformation</span>
-                <span class="method-start">51975 ms</span>
+                <span class="method-start">71959 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">52577 ms</span>
+                <span class="method-start">72902 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">52756 ms</span>
+                <span class="method-start">73155 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">productDetailsPage</span>
-                <span class="method-start">54372 ms</span>
+                <span class="method-start">75178 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">54832 ms</span>
+                <span class="method-start">75973 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">55020 ms</span>
+                <span class="method-start">76188 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">restAppStateFunction</span>
-                <span class="method-start">56573 ms</span>
+                <span class="method-start">78623 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">57228 ms</span>
+                <span class="method-start">79917 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">57406 ms</span>
+                <span class="method-start">80174 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">changeFilterName_AtoZ</span>
-                <span class="method-start">59047 ms</span>
+                <span class="method-start">82558 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">59695 ms</span>
+                <span class="method-start">83619 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">59890 ms</span>
+                <span class="method-start">83850 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">changeFilterName_ZtoA</span>
-                <span class="method-start">61544 ms</span>
+                <span class="method-start">86389 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">62225 ms</span>
+                <span class="method-start">87493 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">62413 ms</span>
+                <span class="method-start">87737 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">changeFilterPrice_LowtoHigh</span>
-                <span class="method-start">64051 ms</span>
+                <span class="method-start">90084 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">64733 ms</span>
+                <span class="method-start">91189 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">64922 ms</span>
+                <span class="method-start">91429 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">changeFilterPrice_HightoLow</span>
-                <span class="method-start">66649 ms</span>
+                <span class="method-start">93710 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">67356 ms</span>
+                <span class="method-start">94892 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpofBrowser</span>
-                <span class="method-start">67545 ms</span>
+                <span class="method-start">95152 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifyAboutPage</span>
-                <span class="method-start">69132 ms</span>
+                <span class="method-start">97722 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">85771 ms</span>
+                <span class="method-start">117489 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

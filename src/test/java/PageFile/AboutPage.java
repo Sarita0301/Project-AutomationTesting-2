@@ -11,20 +11,20 @@ public class AboutPage extends AbstractMethods {
 	WebDriver driver;
 	AbstractMethods Am;
 
-	@FindBy(xpath="//*[@id=\"__next\"]/div[2]/div[1]/div/div[1]/div[1]/div/div[3]/p")
+	@FindBy(xpath="//div[@class='your-class-name']/p")
 	WebElement AboutPg;
 
-	By tryItFreeBtn =By.xpath("//*[@id=\"__next\"]/div[2]/div[1]/div/div[1]/div[1]/div/div[4]/div[1]/a/button");
+	By tryItFreeBtn =By.xpath("//div[@class='your-class-name']/div[1]/a/button");
 //	
 //	WebElement tryItFreeBtn;
 
 	@FindBy(xpath="//h1[text()='Start testing in minutes']")
 	WebElement startTestingText;
 
-	@FindBy(xpath="//*[@id=\"__next\"]/div[2]/div[1]/div/div[1]/div[1]/div/div[4]/div[2]/a/button[1]")
+	@FindBy(xpath="//div[@class='your-class-name']/div[2]/a/button[1]")
 	WebElement RequestDemoBtn;
 
-	@FindBy(xpath="//*[@id=\"form_3124\"]/div/div/div/div[1]/div/div[1]/span/h1")
+	@FindBy(xpath="//div[@id='form_3124']/div/div/div/div[1]/div/div[1]/span/h1")
 	WebElement requestDemoText;
 
 	public AboutPage(WebDriver driverhere) {

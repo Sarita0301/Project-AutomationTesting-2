@@ -30,12 +30,12 @@ public class AbstractMethods {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(FindBy));
 	}
-
-	public void Hoveranyelement(WebElement el) {
-
-		Actions ac = new Actions(driver);
-		ac.moveToElement(el).build().perform();
-	}
+//
+//	public void Hoveranyelement(WebElement el) {
+//
+//		Actions ac = new Actions(driver);
+//		ac.moveToElement(el).build().perform();
+//	}
 
 	public void implicitlywaitmethod() {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));

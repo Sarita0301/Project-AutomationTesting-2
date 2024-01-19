@@ -38,11 +38,14 @@ public class SauceDemoAutomationTestCases {
 	ProductDetailsPage Pdp;
 	AboutPage Abp;
 
-	@FindBy(xpath = "//*[@id=\\\"react-burger-menu-btn\\\"]")WebElement ActualTitle;
+	@FindBy(xpath = "//*[@id='react-burger-menu-btn']")
+	WebElement ActualTitle;
 
 	By massage = By.xpath("//*[contains(text(),'Products')]");
 
-	@FindBy(xpath="//h4[text()='Accepted usernames are:']")WebElement AcceptedUserdetails;
+	@FindBy(xpath="//h4[contains(text()='Accepted usernames are:')]")
+	WebElement AcceptedUserdetails;
+	
 	By popUpOkButton=By.id("onetrust-accept-btn-handler");
 
 	@FindBy(xpath="//h1[text()='Start testing in minutes']")

@@ -17,7 +17,7 @@ public class LoginPage extends AbstractMethods{
 	By Password=By.id("password");
 	By loginBtn=By.id("login-button");
 
-	@FindBy(xpath = "/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3")
+	@FindBy(xpath = "//form//div[3]//h3")
 	private WebElement errorLabel;
 
 	public LoginPage(WebDriver driverhere) {
